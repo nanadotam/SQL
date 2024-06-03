@@ -67,7 +67,7 @@ SET SQL_SAFE_UPDATES = 0; -- turn safe mode off temporarily
 UPDATE employee
 SET `Salary (GHC)` = 2000.00
 WHERE `Salary (GHC)` < 2000.00;
-SET SQL_SAFE_UPDATES = 0; -- turn safe mode on
+SET SQL_SAFE_UPDATES = 1; -- turn safe mode on
 
 -- QUESTIONS
 -- add the check constraint by altering the table
