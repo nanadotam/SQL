@@ -69,7 +69,37 @@ SET `Salary (GHC)` = 2000.00
 WHERE `Salary (GHC)` < 2000.00;
 SET SQL_SAFE_UPDATES = 0; -- turn safe mode on
 
+-- QUESTIONS
 -- add the check constraint by altering the table
 ALTER TABLE employee
 ADD CONSTRAINT CHECK (`Salary (GHC)` >= 2000.00);
 
+-- all employees with first name 'K'
+SELECT * FROM employee WHERE FirstName LIKE 'K%';
+
+-- all employees with last name 'ah'
+SELECT * FROM employee WHERE LastName LIKE '%ah';
+
+-- first name exactly 4 characters
+SELECT * FROM employee WHERE LENGTH(FirstName) = 4;
+
+-- last name has 'sa'
+SELECT * FROM employee WHERE LastName LIKE '%sa%';
+
+-- Get all the yahoo boys 
+SELECT * FROM employee WHERE Email LIKE '%yahoo%';
+
+-- employees in the Engineering department
+SELECT * FROM employee WHERE Department = 'Engineering';
+
+-- all employees with first name starting with 'A' and ends with 'a'
+SELECT * FROM employee WHERE FirstName LIKE 'A%a';
+
+-- all employees with last name starting with 'A', 'K', or 'M'
+SELECT * FROM employee WHERE LastName LIKE 'A%' OR LastName LIKE 'K%' OR LastName LIKE 'M%';
+
+-- all employees with first name not starting with 'A'
+SELECT * FROM employee WHERE FirstName NOT LIKE 'A%';
+
+-- employees whose first name has a vowel (a, e, i, o, u) as the second character
+SELECT * FROM employee WHERE FirstName LIKE '_a%' OR FirstName LIKE '_e%' OR FirstName LIKE '_i%' OR FirstName LIKE '_o%' OR FirstName LIKE '_u%';
